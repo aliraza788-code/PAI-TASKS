@@ -1,0 +1,7 @@
+ Flask
+secure_filename
+ os
+ openai
+ pdfkit
+ re
+gunicorn

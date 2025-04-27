@@ -1,0 +1,98 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="/static/css/style5.css">
+</head>
+<body>
+    <div class="resume">
+        {% if photo %}
+        <img src="/static/uploads/{{ photo }}" alt="Profile Picture" class="profile-pic">
+        {% endif %}
+        <h1>{{ name }}</h1>
+        <p>Email: {{ email }} | Phone: {{ phone }}</p>
+
+        <section>
+            <h2>About Me</h2>
+            <p>{{ about_me }}</p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                {% for skill in skills_list %}
+                    <li>{{ skill }}</li>  <!-- skills_list ka ek ek skill yahan aaye -->
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <p>{{ education }}</p>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <p>{{ experience }}</p>
+        </section>
+
+        <section>
+            <h2>Resume Summary</h2>
+            <p>{{ resume_content }}</p>
+        </section>
+
+        <section>
+            <h2>Cover Letter</h2>
+            <p>
+                {{name}}<br>
+                {{address}}<br>
+                {{city_state_zip}}<br>
+                {{email}}<br>
+                {{phone}}<br>
+                {{today_date}}
+            </p>
+            
+            <p>
+                {{hiring_manager_name}}<br>
+                {{company_name}}<br>
+                {{company_address}}<br>
+                {{company_city_state_zip}}
+            </p>
+            
+            <p>Dear {{hiring_manager_name}},</p>
+            
+            <p>
+                I am writing to express my interest in the <strong>{{position_title}}</strong> position at <strong>{{company_name}}</strong>, as advertised on <strong>{{source_of_job_posting}}</strong>.
+                With a strong foundation in Python, HTML, CSS, web app development, and one year of experience in graphic designing, I am confident in my ability to contribute effectively to your team.
+            </p>
+            
+            <p>
+                In my previous role as a graphic designer, I honed my design skills and developed a keen eye for detail.
+                I have successfully collaborated with cross-functional teams to deliver visually appealing and user-friendly designs that meet client requirements.
+                My experience in graphic designing has equipped me with a solid understanding of design principles and the ability to create engaging visual content.
+            </p>
+            
+            <p>
+                Moreover, my proficiency in Python, HTML, and CSS, combined with my experience in web app development, enables me to develop interactive and responsive web applications that enhance user experience.
+                I am passionate about leveraging my technical skills and creative abilities to deliver innovative solutions that drive business growth and exceed client expectations.
+            </p>
+            
+            <p>
+                I am excited about the opportunity to bring my unique blend of skills and experience to <strong>{{company_name}}</strong>.
+                I am confident that my background in graphic designing and web development makes me a strong candidate for this role.
+                I am eager to contribute to your team and help <strong>{{company_name}}</strong> achieve its goals.
+            </p>
+            
+            <p>
+                Thank you for considering my application. I look forward to the opportunity to discuss how my skills and experiences align with the needs of your team.
+                Please find my resume attached for your review.
+            </p>
+            
+            <p>Warm regards,<br>{{name}}</p>
+         
+        </section>
+        <a href="#" onclick="window.print();" class="download-btn">Download PDF</a>
+    </div>
+</body>
+</html>
