@@ -14,7 +14,7 @@ def index():
             url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
             response = requests.get(url)
             print(f"URL: {url}")
-            print(f"Response: {response.text}")  # For debugging
+            print(f"Response: {response.text}")  
             if response.status_code == 200:
                 data = response.json()
                 weather_data = {
